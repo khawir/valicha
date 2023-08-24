@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Valicha</title>
+</head>
+<body class="bg-gray-100">
+  <header class="bg-white fixed w-full">
+    <!-- Navbar -->
+    <nav class="container relative mx-auto px-6 py-3">
+        <!-- Flex container -->
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="-my-2">
+            <a href="#">
+              <img src="img/logo.png" alt="" class="h-20"/>
+            </a>
+          </div>
+          <!-- Menu Items -->
+          <div class="hidden space-x-6 font-bold md:flex">
+            <a href="javascript:void(0)" class="hover:text-valichaRed" onclick="toHome()">Home</a>
+            <a href="javascript:void(0)" class="hover:text-valichaRed" onclick="toAbout()">About Us</a>
+            <a href="javascript:void(0)" class="hover:text-valichaRed" onclick="toMenu()">Our Menu</a>
+            <a href="javascript:void(0)" class="hover:text-valichaRed" onclick="toContact()">Contact Us</a>
+            <a href="javascript:void(0)" class="hover:text-valichaRed" onclick="toReview()">Reviews</a>
+          </div>
+
+          <!-- Hamburger Icon -->
+          <button id="menu-btn"
+            class="block hamburger md:hidden focus:outline-none">
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden">
+          <div
+            id="menu"
+            class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+          >
+            <a href="#home" class="hover:text-valichaRed">Home</a>
+            <a href="#about-us" class="hover:text-valichaRed">About Us</a>
+            <a href="#our-menu" class="hover:text-valichaRed">Menu</a>
+            <a href="#contact-us" class="hover:text-valichaRed">Contact Us</a>
+            <a href="#our-reviews" class="hover:text-valichaRed">Reviews</a>
+          </div>
+        </div>
+    </nav>
+  </header>
+
+  <hr id="home">
+
+  <section id="hero" class="h-96 md:h-[calc(100vh-400px)] lg:h-[calc(100vh-200px)] xl:h-[calc(100vh-88px)]">
+  </section>
+
+  <section id="about-us" class="p-20 xl:py-32">
+    <div class="w-5/6 sm:w-4/6 md:w-1/2 lg:px-20 xl:p-20">
+      <h2 class="text-4xl font-bold text-center mb-6">About us</h2>
+      <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi odio non aut. Facilis culpa velit ipsa voluptas aspernatur sapiente natus, debitis rerum accusamus temporibus quas iste ea blanditiis, doloremque reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis reprehenderit dignissimos ex nobis, earum odio aliquam ea sunt blanditiis sapiente perferendis, dolore officiis quae hic doloremque ut? Sint, explicabo voluptatibus!</p>
+    </div>
+  </section>
+
+  <section id="our-menu" class="p-10 sm:p-20">
+    <div class="flex justify-end">
+      <img id="modal-btn" src="img/menu.jpg" alt="menu" class="block h-80 w-60 md:h-96 md:w-80 lg:mr-32 xl:mr-72 hover:cursor-pointer">
+    </div>
+  </section>
+
+  <section class="relative">
+    <div id="my-modal" class="hidden fixed z-10 left-0 top-0 h-full w-full overflow-auto bg-[rgba(0,0,0,0.5)]">
+      <div class="modal-content">
+        <div class="bg-valichaOrange px-4 pb-12 text-white rounded-t-xl">
+          <span id="modal-close" class="text-black text-4xl float-right cursor-pointer hover:text-white">&times;</span>
+        </div>
+        <div class="p-0 bg-black">
+          <img src="img/menu.jpg" alt="menu" class="items-center mx-auto">
+        </div>
+        <div class="bg-valichaOrange p-4 text-white text-center rounded-b-xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="contact-us">
+    <div class="py-20 px-10 lg:px-20 xl:px-32">
+      <h2 class="text-4xl font-bold text-center mb-6">Contact us</h2>
+        <div class="md:flex items-center">
+          <div class="md:w-1/2 items-center md:px-10">
+            <div class="mx-auto my-10 p-5 lg:p-10 shadow-sm bg-[rgba(243,244,246,0.9)] rounded-xl max-w-xl">
+              <p class="text-xl text-center italic mb-6 text-valichaGreen"><br>For catering, events &amp; inquiries</p>
+              <p class="mb-4"><b>Phone:</b> +61 488 443 376</p>
+              <p><b>Service Area:</b></p>
+              <ul class="list-disc ml-10 mb-20">
+                <li>Toowoomba, QLD</li>
+                <li>Warwick, QLD</li>
+                <li>Chinchilla, QLD</li>
+                <li>Roma, QLD</li>
+                <li>Crows Nest, QLD</li>
+                <li>Miles, QLD</li>
+                <li>Gatton, QLD</li>
+                <li>Dalby, QLD</li>
+                <li>Plainland, QLD</li>
+                <li>Stanthorpe, QLD</li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:w-1/2 felx items-center">
+            <div class="mx-auto my-10 p-5 shadow-sm bg-gray-50 rounded-xl max-w-xl">
+              <p class="text-xl text-center italic mb-6 text-valichaGreen">Fill up the form below to send us a message</p>
+              <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                
+                <input type="hidden" name="apikey" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+                <div class="mb-4">
+                  <label for="name" class="block mb-2 text-sm text-gray-600">Full Name</label>
+                  <input type="text" name="name" id="name" placeholder="John Doe" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" required/>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block mb-2 text-sm text-gray-600">Email Address</label>
+                    <input type="email" name="email" id="email" placeholder="you@company.com" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" required/>
+                </div>
+                <div class="mb-4">
+                    <label for="phone" class="text-sm text-gray-600">Phone Number</label>
+                    <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-567" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"/>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block mb-2 text-sm text-gray-600">Your Message</label>
+                    <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" required></textarea>
+                </div>
+                <div class="mb-4">
+                    <button type="submit" class="w-full px-3 py-4 text-white bg-valichaIndego rounded-md focus:bg-valichaBlue hover:bg-valichaBlue focus:outline-none">Send Message</button>
+                </div>
+                <p class="text-base text-center text-gray-400" id="result"></p>
+              </form>
+            </div>            
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="our-reviews">
+    <div class="max-w-6xl px-5 mx-auto text-center py-20">
+      <h2 class="text-4xl font-bold text-center">What Our Customers Say?</h2>
+
+      <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
+
+        <div class="flex flex-col items-center p-6 space-y-6 rounded-lg bg-[rgba(243,244,246,0.7)] md:w-1/3">
+          <img src="img/avatar-anisha.png" class="w-16 -mt-14" alt="" />
+          <h5 class="text-lg font-bold">Anisha Li</h5>
+          <p class="text-sm text-darkGrayishBlue">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consectetur eius beatae nihil facere totam! Nostrum excepturi ducimus maxime sequi commodi. Laboriosam ipsam ratione corrupti soluta, cupiditate suscipit rerum neque?”</p>
+        </div>
+
+        <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-[rgba(243,244,246,0.7)] md:flex md:w-1/3">
+          <img src="img/avatar-ali.png" class="w-16 -mt-14" alt="" />
+          <h5 class="text-lg font-bold">Ali Bravo</h5>
+          <p class="text-sm text-darkGrayishBlue">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consectetur eius beatae nihil facere totam! Nostrum excepturi ducimus maxime sequi commodi. Laboriosam ipsam ratione corrupti soluta, cupiditate suscipit rerum neque?”</p>
+        </div>
+
+        <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-[rgba(243,244,246,0.7)] md:flex md:w-1/3">
+          <img src="img/avatar-richard.png" class="w-16 -mt-14" alt="" />
+          <h5 class="text-lg font-bold">Richard Watts</h5>
+          <p class="text-sm text-darkGrayishBlue">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consectetur eius beatae nihil facere totam! Nostrum excepturi ducimus maxime sequi commodi. Laboriosam ipsam ratione corrupti soluta, cupiditate suscipit rerum neque?”</p>
+        </div>
+      </div>
+
+      <div class="my-16">
+        <a href="#" class="p-3 px-6 pt-2 text-white bg-valichaPurple rounded-full baseline hover:bg-valichaOrange">Read more</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-valichaBlue">
+    <div class="container md:flex items-center justify-between px-6 py-10 mx-auto">
+
+      <div class="text-center py-4">
+        <a href="#"><img src="img/logo.png" class="h-20  mx-auto" alt="" /></a>
+      </div>
+      
+      <div class="flex justify-center space-x-4 py-4">
+        <a href="#">
+          <img src="img/icon-facebook.svg" alt="" class="h-8" />
+        </a>
+        <a href="#">
+          <img src="img/icon-youtube.svg" alt="" class="h-8" />
+        </a>
+        <a href="#">
+          <img src="img/icon-twitter.svg" alt="" class="h-8" />
+        </a>
+        <a href="#">
+          <img src="img/icon-pinterest.svg" alt="" class="h-8" />
+        </a>
+        <a href="#">
+          <img src="img/icon-instagram.svg" alt="" class="h-8" />
+        </a>
+      </div>
+
+      <div class="text-center text-white py-4">
+        Copyright &copy; 2023, All Rights Reserved
+      </div>      
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+<!-- mr-40 sm:px-20 md:pr-56 md:pl-20 lg:pr-96 lg:pl-32 lg:py-20 xl:mr-96 xl:py-36 -->
